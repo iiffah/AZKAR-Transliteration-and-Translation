@@ -1,0 +1,24 @@
+ /* Footer Style */
+ .footer {
+    background-color: #6B7057;
+    padding: 20px 0;
+    color: #fff;
+}
+
+/* Icon Style for Social Links */
+.icon {
+    font-size: 30px;
+    margin-right: 20px;
+    color: #fff;
+}
+
+/* Divider Style */
+.divider {
+    border-top: 1px solid #fff;
+    margin: 20px 0;
+}
+
+/* Copyright Text Style */
+.copyright {
+    text-align: center;
+}

@@ -1,0 +1,175 @@
+{%include 'navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <!-- เพิ่ม Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    
+    <style>
+        /* ปรับสีของกล่อง Header */
+        header {
+            background-color: #ffffff; /* เปลี่ยนสีพื้นหลังของ Header */
+            padding: 20px; /* เพิ่มระยะห่างของ Header */
+        }
+
+        /* ปรับสีฟอนท์ของข้อความใน Header */
+        .header-text a {
+            text-transform: uppercase; /* ทำให้ตัวอักษรใหญ่ทั้งหมด */
+            font-size: 5em; /* ขยายขนาดตัวอักษร  */
+            text-align: center; /* จัดตำแหน่งตรงกลาง */
+            color: #6B7057; /* เปลี่ยนสีฟอนท์ของลิงก์ */
+            text-decoration: none; /* ลบขีดเส้นใต้ลิงก์ */
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+
+        .main-text {
+            text-transform: uppercase; /* ทำให้ตัวอักษรใหญ่ทั้งหมด */
+            font-size: 1.5em; /* ขยายขนาดตัวอักษร  */
+            text-align: center; /* จัดตำแหน่งตรงกลาง */
+            color: #6B7057; /* เปลี่ยนสีฟอนท์ของข้อความหลัก */
+            font-size: 1.5em; /* ปรับขนาดฟอนท์ของข้อความหลัก */
+            padding: -10px;
+        }
+
+        .contact-box {
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center; /* จัดตำแหน่งข้อความตรงกลาง */
+        }
+
+        .contact-box label {
+            font-weight: bold;
+            color: #6B7057; /* เปลี่ยนสีของข้อความในกล่อง */
+        }
+
+        .contact-box input[type="text"],
+        .contact-box input[type="email"],
+        .contact-box input[type="tel"],
+        .contact-box textarea {
+            width: 100%; /* ทำให้ข้อความใน input และ textarea เต็มกว้าง */
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #6B7057; /* เปลี่ยนสีเส้นขอบของ input และ textarea */
+            border-radius: 5px;
+        }
+
+        .contact-box textarea {
+            height: 150px;
+        }
+
+        .contact-box input[type="text"]:focus,
+        .contact-box input[type="email"]:focus,
+        .contact-box input[type="tel"]:focus,
+        .contact-box textarea:focus {
+            outline: none;
+            border-color: #6B7057; /* เปลี่ยนสีเส้นขอบเมื่อมีการกด */
+        }
+
+
+        /* ปรับสีของกล่อง */
+         .alert-custom {
+            background-color: #ffffff; /* เปลี่ยนสีพื้นหลัง */
+            border: 2px solid #6B7057; /* เปลี่ยนสีขอบ */
+            padding: 30px; 
+            margin: 30px;
+        }
+
+        /* ปรับขนาดฟอนท์และตำแหน่งข้อความในกล่อง */
+        .box-text {
+            font-size: 1.5em; /* ปรับขนาดฟอนท์ */
+            text-align: center; /* จัดตำแหน่งตรงกลาง */
+            color: #6B7057; /* เปลี่ยนสีฟอนท์ของข้อความหลัก */
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* เพิ่ม Flexbox เพื่อจัดตำแหน่งกล่องให้อยู่ตรงกลาง */
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* ทำให้เต็มหน้าจอ */
+        }
+
+        /* ปรับสีและขนาดของปุ่ม SUBMIT */
+        .submit-button {
+            text-align: center;
+        }
+
+        .submit-button button {
+            background-color: #6B7057; /* เปลี่ยนสีพื้นหลังของปุ่ม */
+            color: #fff; /* เปลี่ยนสีของข้อความบนปุ่ม */
+            font-size: 1.2em; /* ปรับขนาดฟอนท์ของข้อความบนปุ่ม */
+            border: none; /* ลบเส้นขอบ */
+            padding: 5px 10px; /* เพิ่มระยะห่างภายในปุ่ม */
+            border-radius: 5px; /* ปรับขอบมนตรี */
+            margin-top: 10px;
+            margin-bottom: 50px;
+        }
+
+        .submit-button button:hover {
+            background-color: #8B8E84; /* เปลี่ยนสีพื้นหลังของปุ่มเมื่อโฮเวอร์ */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="container mt-4">
+        <!-- ส่วนของ Header -->
+        <header class="header text-center">
+            <h1>Contact</h1>
+            <p>Send us a message</p>
+            <p>Get in touch</p>
+        </header>
+    </div>
+
+    <!-- 2 กล่องข้อความ -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                    <div class="contact-box">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Your Telephone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+            </div>
+            <div class="col-md-6">
+                    <div class="contact-box">
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message"></textarea>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="submit-button"> 
+        <button type="submit">SUBMIT</button>
+    </div>
+    
+    <!-- เพิ่ม Bootstrap JavaScript และ jQuery (หากต้องการ) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+    
+    {%include 'footer.html' %}
+</body>
+</html>

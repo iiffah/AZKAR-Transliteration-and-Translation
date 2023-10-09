@@ -1,0 +1,100 @@
+{%include 'navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZKAR</title>
+    <!-- เพิ่ม Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ปรับสีของกล่อง Header */
+        header {
+        background-color: #ffffff; /* เปลี่ยนสีพื้นหลังของ Header */
+        padding: 20px; /* เพิ่มระยะห่างของ Header */
+        }
+
+
+        /* ปรับสีฟอนท์ของข้อความใน Header */
+        .header-text a {
+            text-transform: uppercase; /* ทำให้ตัวอักษรใหญ่ทั้งหมด */
+            font-size: 10em; /* ขยายขนาดตัวอักษร  */
+            text-align: center; /* จัดตำแหน่งตรงกลาง */
+            color: #6B7057; /* เปลี่ยนสีฟอนท์ของลิงก์ */
+            text-decoration: none; /* ลบขีดเส้นใต้ลิงก์ */
+        }
+
+        .main-text {
+            text-transform: uppercase; /* ทำให้ตัวอักษรใหญ่ทั้งหมด */
+            font-size: 1.5em; /* ขยายขนาดตัวอักษร  */
+            text-align: center; /* จัดตำแหน่งตรงกลาง */
+            color: #6B7057; /* เปลี่ยนสีฟอนท์ของข้อความหลัก */
+            font-size: 1.5em; /* ปรับขนาดฟอนท์ของข้อความหลัก */
+            padding: -10px;
+        }
+        /* ปรับสีของกล่อง */
+        .col-md-6 .alert-custom {
+            background-color: #ffffff; 
+            border: 2px solid #6B7057; 
+            padding: 30px; 
+            margin: 30px;
+        }
+
+        /* ปรับขนาดฟอนท์และตำแหน่งข้อความในกล่อง */
+        .box-text {
+            font-size: 1.5em; /* ปรับขนาดฟอนท์ */
+            text-align: center; /* จัดตำแหน่งตรงกลาง */
+            color: #6B7057; /* เปลี่ยนสีฟอนท์ของข้อความหลัก */
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <h2>{{use}}</h2>
+    <!-- Header -->
+    <div class="container mt-4">
+        <header>
+            <div class="container text-center s">
+                <h1 class="header-text ">AZKAR</h1>
+                <p class="main-text">Translation, Transliteration, and Corpus</p>
+            </div>
+        </header>
+    </div>
+
+    <!-- 2 กล่องข้อความ -->
+<div class="row">
+    <div class="col-md-6">
+        <a href="{% url 'mntranslate' %}" style="text-decoration: none;">
+            <div class="alert alert-custom">
+                <p class="box-text">1   أذكار الصباح</p>
+                <p class="box-text">Morning Adhkar</p>
+                <p class="box-text">อัซกัรยามเช้า</p>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-6">
+        <a href="{% url 'entranslate' %}" style="text-decoration: none;">
+            <div class="alert alert-custom">
+                <p class="box-text">2 أذكار المساء</p>
+                <p class="box-text">Evening Adhkar</p>
+                <p class="box-text">อัซกัรยามบ่าย</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+{%include 'footer.html' %}
+    <!-- เพิ่ม Bootstrap JavaScript และ jQuery (หากต้องการ) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

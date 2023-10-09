@@ -1,0 +1,278 @@
+{%include 'navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evening Adhkar</title>
+    <!-- เพิ่ม Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.24.0/font/bootstrap-icons.css">
+
+    
+      {% load static %} 
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+
+    <style>
+            /* ส่วนของ Header */
+        .header {
+            text-align: center;
+            background-color: #ffffff;
+            color: #6B7057;
+            padding: 20px;
+        }
+
+        /* กล่องที่มี Translation และ Reading */
+        .box-group {
+            display: flex;
+            justify-content: center; /* จัดให้กล่องอยู่ตรงกลาง */
+            margin-top: 20px;
+        }
+
+        .box {
+            background-color: #f1f1f1;
+            padding: 5px;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .box p {
+            font-weight: bold;
+        }
+
+        .box img {
+            width: 50px;
+            height: 50px;
+            margin-top: 10px;
+        }
+
+        /* กล่องข้อความ */
+        .box-text {
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* เส้นขีดยาว */
+        .box-text hr {
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #6B7057;
+        }
+
+        /* สไตล์ของ icon สำหรับการเชื่อมต่อ */
+        .icon {
+            font-size: 10px; /* ขนาดไอคอน */
+            margin-right: 20px; /* ระยะห่างข้างขวาของไอคอน */
+            color: #90b00c; /* สีไอคอน */
+        }
+
+
+        .arabic-box{
+            text-align: right; /* จัดเนื้อหาด้านซ้าย */
+        }
+
+        /* ส่วนของกล่อง Translation */
+        .translation-box {
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            padding: 10px;
+            transition: max-height 0.5s ease;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        /* ส่วนของชื่อ Translation */
+        .translation-title {
+            font-weight: bold;
+            color: #6B7057;
+            cursor: pointer;
+        }
+
+        /* ส่วนของเนื้อหา Translation (เริ่มต้นด้วยความสูง 0) */
+        .translation-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        /* เมื่อกดกล่อง Translation */
+        .translation-box.active .translation-content {
+            max-height: 200px; /* ความสูงที่คุณต้องการให้แสดง */
+        }
+
+        /* จัดเนื้อหาด้านซ้าย */
+        .translation-content p {
+            text-align: left;
+        }
+        
+        .box img {
+            height: 20px; 
+            width: 20px; 
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        /* .active1 {
+            border: 5px solid #90b00c;
+        } */
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>أذكار المساء</h1>
+        <p>Evening Adhkar</p>
+        
+    </div>
+    
+
+    <div class="box-group">
+        <div class="box active1" id="transition">
+            <button class="btn" id="translation-button">
+                <img src="{% static 'icon/book.png' %}">Translation
+            </button>
+        </div>
+        <div class="box" id="reading">
+            <button class="btn" id="reading-button">
+                <img src="{% static 'icon/file.png' %}"> Reading
+            </button>
+        </div>
+    </div>
+    
+    
+        
+    <div class="container">
+        <div class="box-text">
+            <div class="arabic-box">
+                <h2>أَعُوْذُ بِاللّٰهِ مِنَ الشَّيْطَانِ الرَّجِيْمِ </h2>
+                <h2>(1x) </h2>
+            </div>
+            <div class="translation-box">
+                <p class="translation-title">---Translation</p>
+                <div class="translation-">  
+                    <p>I seek the protection of Allah from the accursed Shaytan. </p>
+                </div>
+                <p class="translation-title">---Transliteration</p>
+                <div class="translation-">  
+                    <p>Aʿūdhu bi-llāhi mina-sh-Shayṭāni-r-rajīm. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="box-text">
+            <div class="arabic-box">
+                <h2>اَللّٰهُ لَآ إِلٰهَ إِلَّا هُوَ الْحَىُّ الْقَيُّوْمُ ، لَا تَأْخُذُهُۥ سِنَةٌ وَّلَا نَوْمٌ ، لَهُ مَا فِى السَّمٰـوٰتِ وَمَا فِى الْأَرْضِ ، مَنْ ذَا الَّذِىْ يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِۦ ، يَعْلَمُ مَا بَيْنَ أَيْدِيْهِمْ وَمَا خَلْفَهُمْ ، وَلَا يُحِيْطُوْنَ بِشَىْءٍ مِّنْ عِلْمِهِٓ إِلَّا بِمَا شَآءَ ، وَسِعَ كُرْسِيُّهُ السَّمٰـوٰتِ وَالْأَرْضَ، وَلَا يَئُوْدُهُۥ حِفْظُهُمَا ، وَهُوَ الْعَلِىُّ الْعَظِيْمُ.    
+                </h2>
+                <h2>(1x) </h2>
+            </div>
+            <div class="translation-box">
+                <p class="translation-title">---Translation</p>
+                <div class="translation-">  
+                    <p>Allah! There is no god but He - the Living, the Self-subsisting, Eternal. No slumber can seize Him nor Sleep. His are all things in the heavens and on earth. Who is there that can intercede in His presence except as he permitteth? He knoweth what (appeareth to His creatures As) Before or After or Behind them. Nor shall they compass aught of His knowledge except as He willeth. His throne doth extend over the heavens and on earth, and He feeleth no fatigue in guarding and preserving them, For He is the Most High, the Supreme (in glory). </p>
+                </div>
+                <p class="translation-title">---Transliteration</p>
+                <div class="translation-">  
+                    <p>Allahu laaa ilaaha illaa huwal haiyul qai-yoom; laa taakhuzuhoo sinatunw wa laa nawm; lahoo maa fissamaawaati wa maa fil ard; man zallazee yashfa'u indahooo illaa be iznih; ya'lamu maa baina aideehim wa maa khalfahum; wa laa yuheetoona beshai 'immin 'ilmihee illa be maa shaaaa; wasi'a kursiyyuhus samaa waati wal arda wa la ya'ooduho hifzuhumaa; wa huwal aliyyul 'azeem </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="box-text">
+            <div class="arabic-box">
+                <h2>
+                    بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ. قُلْ هُوَ اللّٰهُ أَحَدٌ ، اَللّٰهُ الصَّمَدُ ، لَمْ يَلِدْ وَلَمْ يُوْلَدْ ، وَلَمْ يَكُنْ لَّهُ كُفُوًا أَحَدٌ.</h2>
+                <h2>(3x) </h2>
+            </div>
+            <div class="translation-box">
+                <p class="translation-title">---Translation</p>
+                <div class="translation-">  
+                    <p>In the name of Allah, the Entirely Merciful, the Especially Merciful.Say, “He is Allah, [who is] One,Allah, the Eternal Refuge.He neither begets nor is born,Nor is there to Him any equivalent.” </p>
+                </div>
+                <p class="translation-title">---Transliteration</p>
+                <div class="translation-">  
+                    <p>Bismillah hir rahman nir raheem ,Qul huwal laahu ahad,Allah hus-samad,Lam yalid wa lam yoolad,Wa lam yakul-lahoo kufuwan ahad </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    {%include 'footer.html' %}
+    <!-- เพิ่ม FontAwesome หรือไอคอนที่คุณใช้ -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Get references to the translation box and reading box
+            const translationBox = $('.translation-box');
+            const readingBox = $('.box-text');
+    
+            // Initially, hide the translation content
+            translationBox.find('.translation-content').css('max-height', '0');
+    
+            // Function to toggle the translation content
+            function toggleTranslationContent() {
+                translationBox.toggleClass('active');
+                const translationContent = translationBox.find('.translation-content');
+                if (translationBox.hasClass('active')) {
+                    translationContent.css('max-height', '200px'); // Show the content
+                } else {
+                    translationContent.css('max-height', '0'); // Hide the content
+                }
+            }
+    
+            // Handle the Translation button click
+            $('#translation-button').click(function () {
+                // Hide the reading content if it's visible
+                readingBox.find('p').show();
+                toggleTranslationContent();
+            });
+    
+            // Handle the Reading button click
+            $('#reading-button').click(function () {
+                // Show the reading content and hide the translation content
+                readingBox.find('p').hide();
+                translationBox.removeClass('active');
+                translationBox.find('.translation-content').css('max-height', '0');
+            });
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function () {
+            // Add or remove the "active" class when the translation button is clicked
+            $("#transition").click(function () {
+                $(this).toggleClass("active1");
+                $("#reading").removeClass("active1");
+            });
+    
+            // Add or remove the "active" class when the reading button is clicked
+            $("#reading").click(function () {
+                $(this).toggleClass("active1");
+                // Remove the "active1" class from the "transition" element
+                $("#transition").removeClass("active1");
+            });
+        });
+    </script>
+    
+
+    
+</body>
+</html>

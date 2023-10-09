@@ -1,0 +1,118 @@
+{% load static %}
+
+{% block title %}
+    
+{% endblock %}
+
+{% block script %}
+    <script type"text/javascript" src="{% static 'network/signup.js' %}"></script>
+{% endblock %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #6B7057;
+    margin: 20;
+    padding: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    max-width: 400px;
+    margin:  auto;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    align-items: center;
+}
+
+button {
+    background-color: #1f522c;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1f522c;
+}
+
+a {
+    color: #1f522c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+</style>
+<body>
+    <div class="container">
+        <h1>Registration</h1>
+        <form action="{% url 'register' %}" method="post" id="signin-form" style="width: 100%;margin-bottom: 5vh;"  enctype="multipart/form-data">
+            {% csrf_token %}
+            <input class="form-control inp fname" type="text" id="firstname" name="firstname" placeholder="First Name *" autocomplete="off" autofocus required>
+            <span class="star small"></span>
+            <input class="form-control inp lname" type="text" id="lastname" name="lastname" placeholder="Last Name *" autocomplete="off" autofocus required>
+            <span class="star small"></span>
+            <input class="form-control inp usrname" type="text" id="username" name="username" placeholder="User Name *" autocomplete="off" autofocus required>
+            <span class="star small"></span>
+            <input class="form-control inp pswd" type="password" id="password" name="password" placeholder="Password *" autocomplete="off" autofocus required>
+            <span class="star small"></span>
+            <input class="form-control inp cpswd" type="password" id="password" name="confirmation" placeholder="Confirm Password *" autocomplete="off" autofocus required>
+            <span class="star small"></span>
+    
+            
+            <button type="submit">Register</button>
+        </form>
+        <div>
+            <center>
+                Already have an account?&nbsp;&nbsp;<a href="{% url 'login' %}">Log in</a>
+            </center>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+

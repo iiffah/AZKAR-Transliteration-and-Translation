@@ -1,0 +1,72 @@
+{% load static %}
+<!-- เพิ่ม Bootstrap CSS -->
+<link rel="stylesheet" href="{% static 'footer.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.24.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+
+<style>
+        /* Footer Style */
+        .footer {
+            background-color: #6B7057;
+            padding: 10px 0;
+            color: #fff;
+            text-align: center; /* จัดให้ข้อความอยู่ตรงกลาง */
+        }
+        /* CSS */
+        .footer-heading {
+            font-size: 20px; /* Adjust the font size as desired */
+        }
+
+        /* Text inside the footer */
+        .footer-text {
+            font-size: 18px; /* Adjust the font size of text inside the footer */
+        }
+        /* Icon Style  */
+        .icon {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #fff;
+        }
+
+        /* Divider Style */
+        .divider {
+            border-top: 1px solid #fff;
+            margin: 10px 0; /* ปรับระยะห่างของ divider */
+        }
+
+        /* Copyright Text Style */
+        .copyright {
+            text-align: center;
+            margin-top: 10px; /* ปรับระยะห่างของ copyright text ด้านบน */
+            font-size: 14px; /* ปรับขนาดข้อความลง */
+        }
+</style>
+
+<footer class="footer" style="background-color: #6B7057;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h4 class="footer-heading">Contact Information</h4>
+                <p>Email: ug632437003@ftu.ac.th</p>
+                <p>Phone: 064-024-4070</p>
+            </div>
+            <div class="col-md-6">
+                <h4 class="footer-heading">Connect With Us</h4>
+                <a href="https://www.facebook.com/IffahBintiHusin/" target="_blank" class="icon"><i
+                        class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/iif_fah/" target="_blank" class="icon"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://github.com/iiffah" target="_blank" class="icon"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="copyright">
+            &copy; 2023 All Rights Reserved
+        </div>
+    </div>
+    <!-- เพิ่ม Bootstrap JavaScript และ jQuery (หากต้องการ) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+
+</footer>

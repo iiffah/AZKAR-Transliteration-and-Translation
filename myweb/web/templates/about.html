@@ -1,0 +1,106 @@
+{%include 'navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <!-- เพิ่ม Bootstrap CSS หรือ CSS ที่คุณต้องการ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <style>
+        /* สไตล์ของ Header */
+        header {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* สไตล์ของกล่องข้อความ */
+        .info-box {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        /* สไตล์ของข้อความ */
+        .info-text {
+            font-size: 1.2em;
+            margin-left: 10px;
+        }
+
+        /* สไตล์ของกล่องสี่เหลี่ยม */
+        .focus-box {
+            text-align: left;
+            margin: 0 auto; /* จัดตรงกลางในแนวนอน */
+            width: 60%; /* กำหนดความกว้างของกล่อง */
+            padding: 20px; /* เพิ่มช่องว่างในกล่อง */
+            background-color: #f5f5f5; /* สีพื้นหลังของกล่อง */
+        }
+
+        /* สไตล์ของรายการ */
+        .focus-list {
+            text-align: left;
+        }
+
+        /* สไตล์ของหัวข้อรายการ */
+        .focus-header {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* สไตล์ของรายการ */
+        .focus-item {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="container">
+        <header class="header">
+            <h1>About Us</h1>
+            <p>Life With Allah is a Tarbiyah initiative that aims to connect the creation to The Creator</p>
+        </header>
+    </div>
+
+    <!-- 2 กล่องข้อความในแถวเดียวกัน -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info-box">
+                    <br></br>
+                    <p class="info-text">Our goal is to instil the maʿrifah (deep knowledge) and love of Allah and His Messenger ﷺ in ourselves, our families and the wider Ummah.</p>
+                    <p class="info-text">We envision an Ummah that is connected to the Book of Allah; that savours the sweetness of īmān and worship; and that internalises ʿubūdiyyah (servitude) and yaqīn (conviction).</p>
+                    <p class="info-text">We hope to strengthen our īmān and nurture the īmān of our upcoming generations, enabling them to remain steadfast in this era of trials.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="info-box">
+                    <p class="info-text"></p>  <!-- แนบรูปอะไรสักอย่าง -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- เพิ่มส่วน "Our Areas of Focus" ในกล่องสี่เหลี่ยม -->
+    <div class="container focus-list">
+        <div class="focus-box">
+            <h2 class="focus-header">Our Areas of Focus</h2>
+            <ul class="focus-list">
+                <li class="focus-item">Knowing Allah and His Messenger ﷺ</li>
+                <li class="focus-item">The journey of the hereafter</li>
+                <li class="focus-item">The actions and diseases of the heart</li>
+                <li class="focus-item">Tasting the sweetness of ṣalāh</li>
+                <li class="focus-item">Connecting deeply with the Qur'ān</li>
+                <li class="focus-item">Dhikr & duʿā</li>
+                <li class="focus-item">The inner dimensions of Ramaḍān and ḥajj</li>
+            </ul>
+        </div>
+    </div>
+    
+    {%include 'footer.html' %}
+    <!-- เพิ่ม Bootstrap JavaScript หรือ JavaScript ที่คุณต้องการ (หากจำเป็น) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
