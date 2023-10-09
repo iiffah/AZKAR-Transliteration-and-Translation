@@ -1,7 +1,7 @@
 # AZKAR-translation-and-Transliteration
  AZKAR-translation-and-Transliteration thai and english
 
-![Project Logo](logo1.png) 
+![Project Logo]("D:/DATA3\A.anas.html/final web/AZKAR-translation-and-Transliteration/myweb/web/static/icon/logo1.png") 
 
 ## Table of Contents
 
@@ -34,5 +34,5 @@ AZKAR is a web application that provides translations, and transliterations,  fo
 
 This project is licensed under the MIT License. Feel free to use, modify, and distribute it as needed.
 
-Make sure to replace `logo1.png`, `https://github.com/iiffah/AZKAR-Transliteration-and-Translation.git`, and other placeholders with actual information relevant to your project. This README file provides an overview of your project, how to get started, usage instructions, contribution guidelines, and licensing information. You can further customize it to suit your project's specific needs.
+Make sure to replace `D:/DATA3\A.anas.html/final web/AZKAR-translation-and-Transliteration/myweb/web/static/icon/logo1.png`, `https://github.com/iiffah/AZKAR-Transliteration-and-Translation.git`, and other placeholders with actual information relevant to your project. This README file provides an overview of your project, how to get started, usage instructions, contribution guidelines, and licensing information. You can further customize it to suit your project's specific needs.
 
