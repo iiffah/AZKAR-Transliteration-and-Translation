@@ -77,9 +77,9 @@ def register(request):
     
 def Contact(request):
     if request.method=='POST':
-        first_name=request.POST['first_name']
+        first_name=request.POST['name']
         email=request.POST['email']
-        Telephone_Number=request.POST['Telephone_Number']
+        Telephone_Number=request.POST['phone']
         message=request.POST['message']
         contact=Contacts.objects.create(first_name=first_name,email=email,Telephone=Telephone_Number,message=message)
         messages.success(request, 'Your message successful')
