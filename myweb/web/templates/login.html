@@ -79,7 +79,15 @@ a:hover {
             <span class="star small"></span>
             <input class="form-control inp pswd" type="password" id="password" name="password" placeholder="Password *" autocomplete="off" autofocus required>
             <span class="star small"></span>
-
+            {% if messages %}
+                                <div class="alert alert-danger text-center">
+                                    <ul class="messages">
+                                        {% for message in messages %}
+                                            <li style="list-style: none;">{{ message }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endif %}
             <button type="submit">Login</button>
         </form>
         

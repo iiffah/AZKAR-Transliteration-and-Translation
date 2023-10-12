@@ -10,6 +10,7 @@ from django.core.paginator import Paginator
 from django.contrib.auth.models import User
 from .models import *
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 
 
@@ -38,11 +39,8 @@ def login(request):
                 # login(request, user)
                 return redirect('index')
             else:
-                return render(request, "login.html", {
-                    "message": "Invalid username and/or password."
-                })
-        else:
-            return render (request, "login.html")
+                messages.error(request,"ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง")
+    return render (request, "login.html")
 
 
 def register(request):
